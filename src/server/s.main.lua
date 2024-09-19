@@ -11,7 +11,7 @@ function Gate:load()
     for i = 1, #self.config.gates do 
         local data = self.config.gates[i]
         local key = createObject(self.key, data.key.x, data.key.y, data.key.z, 0, 0, data.key.r)
-        local gate = createObject(data.id, data.gate.closed.x, data.gate.closed.y, data.gate.closed.z, 0, 0, data.gate.closed.r)
+        local gate = createObject(data.id, data.gate.closed.x, data.gate.closed.y, data.gate.closed.z, data.gate.closed.rx, data.gate.closed.ry, data.gate.closed.rz)
         self.gates[key] = { data = data, object = gate, state = "closed" }
     end
     return true
